@@ -1,8 +1,386 @@
----
-layout: default
----
+<h1>HTML e CSS guia de codificação</h1>
+<p>Padrões para um desenvolvimento flexivel, duravél e sustentavel com HTML e CSS.
 
-{% for post in site.posts %}
-  {% include tweet-button.html %}
-  {{ post.content }}
-{% endfor %}
+
+
+</p>
+<hr>
+<h2>Indíce</h2>
+<ul>
+<li><a href="#golden-rule">Regra de ouro</a></li>
+<li><a href="#html">HTML</a><ul>
+<li><a href="#html-syntax">Syntaxe</a></li>
+<li><a href="#html5-doctype">HTML5 doctype</a></li>
+<li><a href="#pragmatism-over-semantics">Pragmatismo com a semântica</a></li>
+<li><a href="#attribute-order">Ordenação de atributos</a></li>
+<li>[Marcação gerada através do Javascript](#javascript-generated markup)</li>
+</ul>
+</li>
+<li><a href="#css">CSS</a><ul>
+<li><a href="#css-syntax">CSS syntaxe</a></li>
+<li><a href="#declaration-order">Ordem de declaração</a></li>
+<li><a href="#formatting-exceptions">Formatando exceções</a><ul>
+<li><a href="#prefixed-properties">Propriedades prefixadas</a></li>
+<li><a href="#rules-with-single-declarations">Regras com declarações unicas</a></li>
+</ul>
+</li>
+<li><a href="#human-readable">Legibilidade para humanos</a><ul>
+<li><a href="#comments">Comentarios</a></li>
+<li><a href="#classes">Classes</a></li>
+<li><a href="#selectors">Seletores</a></li>
+</ul>
+</li>
+<li><a href="#organization">Organização</a></li>
+</ul>
+</li>
+<li><a href="#copy">Escrevendo uma cópia</a><ul>
+<li><a href="#sentence-case">Caso de sentença</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>Regra de outro</h2>
+<blockquote>
+<p>Todo o código em uma base deve parecer que uma pessoa o codificou, não importando quantas pessoas contribuiram.
+
+</p>
+</blockquote>
+<p>Isso significa estritamente que deve ser reforçado o use de guias a todo momento. Para adições ou contribuições, por favor <a href="https://github.com/mdo/code-guide">mande abra uma &quot;issue&quot; no Github</a>.
+
+
+
+</p>
+<hr>
+<h2>HTML</h2>
+<h3>HTML syntaxe</h3>
+<ul>
+<li>Use tabulações suaves com dois espaços</li>
+<li>A cada novo elemento aninhado deve-se utilzar (2 espaços) para estrutura-los</li>
+<li>Sempre use aspas, nunca apostrofes</li>
+<li>Não inclua barras em elementos que não tem a necessidade de fechamento</li>
+</ul>
+<p><strong>Exemplo incorreto:</strong>
+
+</p>
+<p>````html
+&lt;!DOCTYPE html&gt;
+</p>
+<p><html>
+</p>
+<p><head>
+</p>
+<p><title>Titulo da pagina</title>
+</head>
+</p>
+<p><body>
+<img src='imagens/logo-da-companhia.png' alt='Companhia' />
+</p>
+<p><h1 class='hello-world'>Olá, mundo!</h1>
+</body>
+</html>
+````
+
+</p>
+<p><strong>Exemplo correto:</strong>
+
+</p>
+<p>````html
+&lt;!DOCTYPE html&gt;
+</p>
+<p><html>
+  <head>
+    <title>Titulo da pagina</title>
+  </head>
+  <body>
+    <img src="imagens/logo-da-companhia.png" alt="Companhia">
+    <h1 class="hello-world">Olá, mundo!</h1>
+  </body>
+</html>
+````
+
+
+</p>
+<h3>HTML5 doctype</h3>
+<p>Aplique o padrão a seguir, para cada browser possivel com um simples tipo de documento (doctype) no começo de cada pagina em HTML.
+
+</p>
+<p><code>html
+&lt;!DOCTYPE html&gt;
+</code>
+
+
+</p>
+<h3>Pragmatism over semantics</h3>
+<p>Esforce-se para manter o HTML padronazado e semantico, mas não sacrifique o pragmatismo. Use o menor numero possivel de marcações complexas.
+
+
+</p>
+<h3>Ordem dos atributos</h3>
+<p>Atributos HTML devem ter a seguinte ordem para deixar a leitura ao código mais facil.
+
+</p>
+<ul>
+<li>class</li>
+<li>id</li>
+<li>data-*</li>
+<li>for|type|href</li>
+</ul>
+<p>A sua marcação devera conter este aspecto:
+
+</p>
+<p><code>html
+&lt;a class=&quot;&quot; id=&quot;&quot; data-modal=&quot;&quot; href=&quot;&quot;&gt;Exemplo de link&lt;/a&gt;
+</code>
+
+</p>
+<h3>Marcações através do Javascript</h3>
+<p>Escrever marcações em um arquivo javascript faz com que o contéudo lá inserido, fique dificil de encontrar e editar, e menos performatico. NÃO FAÇA ISSO.
+
+
+
+</p>
+<hr>
+<h2>CSS</h2>
+<h3>CSS syntaxe</h3>
+<ul>
+<li>Use tabulações suaves  com dois espaços</li>
+<li>Onde um  agrupamento de seletores, mantenha seletores individuais em uma unica linha</li>
+<li>Inclua um espaço antes de abrir o bloco de declaração</li>
+<li>Feche a declaração em uma nova linha</li>
+<li>Include one space after <code>:</code> in each property</li>
+<li>Inclua um espaço depois de <code>:</code> em cada propriedade</li>
+<li>Cada declaração ficara em sua própria linha</li>
+<li>Ao final de todas as declarações devera conter ponto e virgular</li>
+<li>Valores separados por virgulas incluem um espado depois de cada virgula</li>
+<li>Não inclua espaços depois das virgulas em cores RGB ou RGBA, e não prefacie valores com o valor zero</li>
+<li>Todos os valores decimais em minusculas, ex.: <code>#fff</code> ao invés de <code>#FFF</code></li>
+<li>Use atralhos para valores hexadecimais quando disponiveis, ex.: <code>#fff</code> ao invés de <code>#ffffff</code></li>
+<li>Utilize aspas em valores de propriedados nos seletores, ex.: <code>input[type=&quot;text&quot;]</code></li>
+<li>Não especifique unidades para valores do tipo zero, ex.: <code>margin: 0</code> no lugar de <code>margin: 0px;</code></li>
+</ul>
+<p><strong>Exemplo incorreto:</strong>
+
+</p>
+<p><code>css
+.selector, .selector-secondary, .selector[type=text] {
+  padding:15px;
+  margin:0px 0px 15px;
+  background-color:rgba(0, 0, 0, 0.5);
+  box-shadow:0 1px 2px #CCC,inset 0 1px 0 #FFFFFF
+}
+</code>
+
+</p>
+<p><strong>Exemplo correto:</strong>
+
+</p>
+<p><code>css
+.selector,
+.selector-secondary,
+.selector[type=&quot;text&quot;] {
+  padding: 15px;
+  margin: 0 0 15px;
+  background-color: rgba(0,0,0,.5);
+  box-shadow: 0 1px 2px #ccc, inset 0 1px 0 #fff;
+}
+</code>
+
+</p>
+<p>Qualquer questão em relação aos termos utilizados aqui? Veja a <a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets#Syntax">sessão de syntaxe do CSS</a> no Wikipedia.
+
+
+
+</p>
+<h3>Ordem de declaração</h3>
+<p>Relacionado a declarações devem ser agrupadas, colocando o posicionamento e propriedade de &quot;box-model&quot; proximas do topo, seguindos pela tipografia e propriedades visuais.
+
+</p>
+<p>````css
+.declaration-order {
+  /<em> Positioning </em>/
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+
+</p>
+<p>  /<em> Box-model </em>/
+  display: block;
+  float: right;
+  width: 100px;
+  height: 100px;
+
+</p>
+<p>  /<em> Typography </em>/
+  font: normal 13px &quot;Helvetica Neue&quot;, sans-serif;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+
+</p>
+<p>  /<em> Visual </em>/
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+
+</p>
+<p>  /<em> Misc </em>/
+  opacity: 1;
+}
+````
+
+</p>
+<p>For a complete list of properties and their order, please see <a href="http://twitter.github.com/recess">Recess</a>.
+
+
+</p>
+<h3>Formatando exceções</h3>
+<p>Em muitos casos, elas fazem sentido para desviar ligeiramente para o padrão <a href="#css-syntax">syntaxe</a>.
+
+
+</p>
+<h4>Propriedades prefixadas</h4>
+<p>Onde a utilização de prefixos de propriedades de navegadores especificos, indentam cada propriedade com uma igualação vertical para facilitar a edição.
+
+</p>
+<p><code>css
+.selector {
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+}
+</code>
+
+</p>
+<p>No Textmate, use <strong>Text &rarr; Editando cada linha da selação</strong> (&#8963;&#8984;A). No Sublime Text 2, use <strong>Seleção &rarr; Add linha anterior</strong> (&#8963;&#8679;&uarr;) e <strong>Seleção &rarr;  Add proxima linha</strong> (&#8963;&#8679;&darr;).
+
+</p>
+<h4>Regras com declarações unicas</h4>
+<p>Em instancias onde regras severas estão presentes com uma unica declaração para cada uma, considere remover quebras de linhas para uma melhor leitura e rápida edição.
+
+</p>
+<p>````css
+.span1 { width: 60px; }
+.span2 { width: 140px; }
+.span3 { width: 220px; }
+
+</p>
+<p>.sprite {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  background-image: url(../img/sprite.png);
+}
+.icon           { background-position: 0 0; }
+.icon-home      { background-position: 0 -20px; }
+.icon-account   { background-position: 0 -40px; }
+````
+
+
+</p>
+<h3>Legibilidade para humanos</h3>
+<p>Código é escrito e mantido por pessoas. Mantenha o seu código descritivo, bem comentado, e que possa ser abordado por outros.
+
+</p>
+<h4>Comentarios</h4>
+<p>Bons comentarios no código transmitem o contexto ou o propósito e não devem simplismente explicar um componente ou o nome de uma classe.
+
+</p>
+<p><strong>Mal exemplo:</strong>
+
+</p>
+<p><code>css
+/* Modal header */
+.modal-header {
+  ...
+}
+</code>
+
+</p>
+<p><strong>Bom exemplo:</strong>
+
+</p>
+<p><code>css
+/* Wrapping element for .modal-title and .modal-close */
+.modal-header {
+  ...
+}
+</code>
+
+</p>
+<h4>Nomes de classes</h4>
+<ul>
+<li>Keep classes lowercase and use dashes (not underscores or camelCase)</li>
+<li>Mantenha as classes em minusculas e use hifens (e não sublinhados ou tudo junto com apenas o começo das palavras capitalizado &quot;camelCase&quot;)</li>
+<li>Evite abriviações como notação</li>
+<li>Mantenha classes com nomes pequenos e sucintos quando possivel</li>
+<li>Use nome siginificativos; use nomes estruturais ou que denotem o proposito como apresentação</li>
+<li>Use prefixos de classes baseado em parentes mais proximos do componente base daquela classe</li>
+</ul>
+<p><strong>Mal exemplo:</strong>
+
+</p>
+<p><code>css
+.t { ... }
+.red { ... }
+.header { ... }
+</code>
+
+</p>
+<p><strong>Bom exemplo:</strong>
+
+</p>
+<p><code>css
+.tweet { ... }
+.important { ... }
+.tweet-header { ... }
+</code>
+
+</p>
+<h4>Seletores</h4>
+<ul>
+<li>Use classes em elementos que representem abstrações genericas</li>
+<li>Mantenha o mais curto e limite o numero de elementos em cada arvore de seletor</li>
+<li>Scope classes to the closest parent when necessary (e.g., when not using prefixed classes)</li>
+<li>Mantenha-se no escopo de classes que tem um parentes mais proximo ( ex.:, onde não usam classes com prefixo )</li>
+</ul>
+<p><strong>Mal examplo:</strong>
+
+</p>
+<p><code>css
+span { ... }
+.page-container #stream .stream-item .tweet .tweet-header .username { ... }
+.avatar { ... }
+</code>
+
+</p>
+<p><strong>Bom exemplo:</strong>
+
+</p>
+<p><code>css
+.avatar { ... }
+.tweet-header .username { ... }
+.tweet .avatar { ... }
+</code>
+
+</p>
+<h3>Organização</h3>
+<ul>
+<li>Organize seleções do código por componente</li>
+<li>Desenvolva uma concistente hierarquia comentada</li>
+<li>Se você estiver utilizando varios arquivos para CSS, quebre eles em componentes</li>
+</ul>
+<hr>
+<h2>Cópia</h2>
+<h3>Caso de sentença</h3>
+<p>Sempre escreva uma cópia, incluindo cabeçãlhos e comentarios do código, em <a href="http://en.wikipedia.org/wiki/Letter_case#Usage">caso de sentença</a>. Em outras palavras, ao lado dos titulos e nomes próprios, sempre capitalize a primeira palavra.
+
+
+
+</p>
+<hr>
+<h3>Obrigado</h3>
+<p>Fortemente inspirado pelo <a href="https://github.com/necolas/idiomatic-css">CSS Idiomatico</a> e O <a href="http://github.com/styleguide">Guia de estilo do Github</a>. Feito com todo amor do mundo por <a href="http://twitter.com/mdo">@mdo</a>.
+</p>
