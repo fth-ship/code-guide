@@ -1,34 +1,33 @@
-# HTML and CSS code guide
-Standards for developing flexible, durable, and sustainable HTML and CSS.
+# HTML e CSS guia de codificação
+Padrões para um desenvolvimento flexivel, duravél e sustentavel com HTML e CSS.
 
 
 
 ----------
 
 
+## Indíce
 
-## Table of contents
-
-* [Golden rule](#golden-rule)
+* [Regra de ouro](#golden-rule)
 * [HTML](#html)
-  * [Syntax](#html-syntax)
+  * [Syntaxe](#html-syntax)
   * [HTML5 doctype](#html5-doctype)
-  * [Pragmatism over semantics](#pragmatism-over-semantics)
-  * [Attribute order](#attribute-order)
-  * [JavaScript generated markup](#javascript-generated markup)
+  * [Pragmatismo com a semântica](#pragmatism-over-semantics)
+  * [Ordenação de atributos](#attribute-order)
+  * [Marcação gerada através do Javascript](#javascript-generated markup)
 * [CSS](#css)
-  * [CSS syntax](#css-syntax)
-  * [Declaration order](#declaration-order)
-  * [Formatting exceptions](#formatting-exceptions)
-    * [Prefixed properties](#prefixed-properties)
-    * [Rules with single declarations](#rules-with-single-declarations)
-  * [Human readable](#human-readable)
-    * [Comments](#comments)
+  * [CSS syntaxe](#css-syntax)
+  * [Ordem de declaração](#declaration-order)
+  * [Formatando exceções](#formatting-exceptions)
+    * [Propriedades prefixadas](#prefixed-properties)
+    * [Regras com declarações unicas](#rules-with-single-declarations)
+  * [Legibilidade para humanos](#human-readable)
+    * [Comentarios](#comments)
     * [Classes](#classes)
-    * [Selectors](#selectors)
-  * [Organization](#organization)
-* [Writing copy](#copy)
-  * [Sentence case](#sentence-case)
+    * [Seletores](#selectors)
+  * [Organização](#organization)
+* [Escrevendo uma cópia](#copy)
+  * [Caso de sentença](#sentence-case)
 
 
 
@@ -36,11 +35,11 @@ Standards for developing flexible, durable, and sustainable HTML and CSS.
 
 
 
-## Golden rule
+## Regra de outro 
 
-> All code in any code base should look like a single person typed it, no matter how many people contributed.
+> Todo o código em uma base deve parecer que uma pessoa o codificou, não importando quantas pessoas contribuiram.
 
-This means strictly enforcing these agreed upon guidelines at all times. For additions or contributions, please [file an issue on GitHub](https://github.com/mdo/code-guide).
+Isso significa estritamente que deve ser reforçado o use de guias a todo momento. Para adições ou contribuições, por favor [mande abra uma "issue" no Github](https://github.com/mdo/code-guide).
 
 
 
@@ -51,39 +50,39 @@ This means strictly enforcing these agreed upon guidelines at all times. For add
 ## HTML
 
 
-### HTML syntax
+### HTML syntaxe
 
-* Use soft-tabs with two spaces
-* Nested elements should be indented once (2 spaces)
-* Always use double quotes, never single quotes
-* Don't include a trailing slash in self-closing elements
+* Use tabulações suaves com dois espaços
+* A cada novo elemento aninhado deve-se utilzar (2 espaços) para estrutura-los
+* Sempre use aspas, nunca apostrofes
+* Não inclua barras em elementos que não tem a necessidade de fechamento
 
-**Incorrect example:**
+**Exemplo incorreto:**
 
 ````html
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page title</title>
+<title>Titulo da pagina</title>
 </head>
 <body>
-<img src='images/company-logo.png' alt='Company' />
-<h1 class='hello-world'>Hello, world!</h1>
+<img src='imagens/logo-da-companhia.png' alt='Companhia' />
+<h1 class='hello-world'>Olá, mundo!</h1>
 </body>
 </html>
 ````
 
-**Correct example:**
+**Exemplo correto:**
 
 ````html
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Page title</title>
+    <title>Titulo da pagina</title>
   </head>
   <body>
-    <img src="images/company-logo.png" alt="Company">
-    <h1 class="hello-world">Hello, world!</h1>
+    <img src="imagens/logo-da-companhia.png" alt="Companhia">
+    <h1 class="hello-world">Olá, mundo!</h1>
   </body>
 </html>
 ````
@@ -91,7 +90,7 @@ This means strictly enforcing these agreed upon guidelines at all times. For add
 
 ### HTML5 doctype
 
-Enforce standards mode in every browser possible with this simple doctype at the beginning of every HTML page.
+Aplique o padrão a seguir, para cada browser possivel com um simples tipo de documento (doctype) no começo de cada pagina em HTML.
 
 ````html
 <!DOCTYPE html>
@@ -100,27 +99,27 @@ Enforce standards mode in every browser possible with this simple doctype at the
 
 ### Pragmatism over semantics
 
-Strive to maintain HTML standards and semantics, but don't sacrifice pragmatism. Use the least amount of markup with the fewest intricacies whenever possible.
+Esforce-se para manter o HTML padronazado e semantico, mas não sacrifique o pragmatismo. Use o menor numero possivel de marcações complexas.
 
 
-### Attribute order
+### Ordem dos atributos 
 
-HTML attributes should come in this particular order for easier reading of code.
+Atributos HTML devem ter a seguinte ordem para deixar a leitura ao código mais facil.
 
 * class
 * id
 * data-*
 * for|type|href
 
-Such that your markup looks like:
+A sua marcação devera conter este aspecto:
 
 ````html
-<a class="" id="" data-modal="" href="">Example link</a>
+<a class="" id="" data-modal="" href="">Exemplo de link</a>
 ````
 
-### JavaScript generated markup
+### Marcações através do Javascript
 
-Writing markup in a javascript file makes the content harder to find, harder to edit, and less performant. Don't do it.
+Escrever marcações em um arquivo javascript faz com que o contéudo lá inserido, fique dificil de encontrar e editar, e menos performatico. NÃO FAÇA ISSO.
 
 
 
@@ -130,23 +129,24 @@ Writing markup in a javascript file makes the content harder to find, harder to 
 
 ## CSS
 
-### CSS syntax
+### CSS syntaxe
 
-* Use soft-tabs with two spaces
-* When grouping selectors, keep individual selectors to a single line
-* Include one space before the opening brace of declaration blocks
-* Place closing braces of declaration blocks on a new line
+* Use tabulações suaves  com dois espaços
+* Onde um  agrupamento de seletores, mantenha seletores individuais em uma unica linha
+* Inclua um espaço antes de abrir o bloco de declaração
+* Feche a declaração em uma nova linha
 * Include one space after <code>:</code> in each property
-* Each declaration should appear on its own line
-* End all declarations with a semi-colon
-* Comma-separated values should include a space after each comma
-* Don't include spaces after commas in RGB or RGBa colors, and don't preface values with a leading zero
-* Lowercase all hex values, e.g., <code>#fff</code> instead of <code>#FFF</code>
-* Use shorthand hex values where available, e.g., <code>#fff</code> instead of <code>#ffffff</code>
-* Quote attribute values in selectors, e.g., <code>input[type="text"]</code>
-* Avoid specifying units for zero values, e.g., <code>margin: 0;</code> instead of <code>margin: 0px;</code>
+* Inclua um espaço depois de <code>:</code> em cada propriedade
+* Cada declaração ficara em sua própria linha
+* Ao final de todas as declarações devera conter ponto e virgular
+* Valores separados por virgulas incluem um espado depois de cada virgula
+* Não inclua espaços depois das virgulas em cores RGB ou RGBA, e não prefacie valores com o valor zero
+* Todos os valores decimais em minusculas, ex.: <code>#fff</code> ao invés de <code>#FFF</code>
+* Use atralhos para valores hexadecimais quando disponiveis, ex.: <code>#fff</code> ao invés de <code>#ffffff</code>
+* Utilize aspas em valores de propriedados nos seletores, ex.: <code>input[type="text"]</code>
+* Não especifique unidades para valores do tipo zero, ex.: <code>margin: 0</code> no lugar de <code>margin: 0px;</code>
 
-**Incorrect example:**
+**Exemplo incorreto:**
 
 ````css
 .selector, .selector-secondary, .selector[type=text] {
@@ -157,7 +157,7 @@ Writing markup in a javascript file makes the content harder to find, harder to 
 }
 ````
 
-**Correct example:**
+**Exemplo correto:**
 
 ````css
 .selector,
@@ -170,12 +170,13 @@ Writing markup in a javascript file makes the content harder to find, harder to 
 }
 ````
 
-Questions on the terms used here? See the [syntax section of the Cascading Style Sheets article](http://en.wikipedia.org/wiki/Cascading_Style_Sheets#Syntax) on Wikipedia.
+Qualquer questão em relação aos termos utilizados aqui? Veja a [sessão de syntaxe do CSS](http://en.wikipedia.org/wiki/Cascading_Style_Sheets#Syntax) no Wikipedia.
 
 
-### Declaration order
 
-Related declarations should be grouped together, placing positioning and box-model properties closest to the top, followed by typographic and visual properties.
+### Ordem de declaração
+
+Relacionado a declarações devem ser agrupadas, colocando o posicionamento e propriedade de "box-model" proximas do topo, seguindos pela tipografia e propriedades visuais.
 
 ````css
 .declaration-order {
@@ -212,13 +213,14 @@ Related declarations should be grouped together, placing positioning and box-mod
 For a complete list of properties and their order, please see [Recess](http://twitter.github.com/recess).
 
 
-### Formatting exceptions
+### Formatando exceções
 
-In some cases, it makes sense to deviate slightly from the default [syntax](#css-syntax).
+Em muitos casos, elas fazem sentido para desviar ligeiramente para o padrão [syntaxe](#css-syntax).
 
-#### Prefixed properties
 
-When using vendor prefixed properties, indent each property such that the value lines up vertically for easy multi-line editing.
+#### Propriedades prefixadas
+
+Onde a utilização de prefixos de propriedades de navegadores especificos, indentam cada propriedade com uma igualação vertical para facilitar a edição.
 
 ````css
 .selector {
@@ -228,11 +230,11 @@ When using vendor prefixed properties, indent each property such that the value 
 }
 ````
 
-In Textmate, use **Text &rarr; Edit Each Line in Selection** (&#8963;&#8984;A). In Sublime Text 2, use **Selection &rarr; Add Previous Line** (&#8963;&#8679;&uarr;) and **Selection &rarr;  Add Next Line** (&#8963;&#8679;&darr;).
+No Textmate, use **Text &rarr; Editando cada linha da selação** (&#8963;&#8984;A). No Sublime Text 2, use **Seleção &rarr; Add linha anterior** (&#8963;&#8679;&uarr;) e **Seleção &rarr;  Add proxima linha** (&#8963;&#8679;&darr;).
 
-#### Rules with single declarations
+#### Regras com declarações unicas
 
-In instances where several rules are present with only one declaration each, consider removing new line breaks for readability and faster editing.
+Em instancias onde regras severas estão presentes com uma unica declaração para cada uma, considere remover quebras de linhas para uma melhor leitura e rápida edição.
 
 ````css
 .span1 { width: 60px; }
@@ -251,15 +253,15 @@ In instances where several rules are present with only one declaration each, con
 ````
 
 
-### Human readable
+### Legibilidade para humanos
 
-Code is written and maintained by people. Ensure your code is descriptive, well commented, and approachable by others.
+Código é escrito e mantido por pessoas. Mantenha o seu código descritivo, bem comentado, e que possa ser abordado por outros.
 
-#### Comments
+#### Comentarios
 
-Great code comments convey context or purpose and should not just reiterate a component or class name.
+Bons comentarios no código transmitem o contexto ou o propósito e não devem simplismente explicar um componente ou o nome de uma classe.
 
-**Bad example:**
+**Mal exemplo:**
 
 ````css
 /* Modal header */
@@ -268,7 +270,7 @@ Great code comments convey context or purpose and should not just reiterate a co
 }
 ````
 
-**Good example:**
+**Bom exemplo:**
 
 ````css
 /* Wrapping element for .modal-title and .modal-close */
@@ -277,15 +279,16 @@ Great code comments convey context or purpose and should not just reiterate a co
 }
 ````
 
-#### Class names
+#### Nomes de classes
 
 * Keep classes lowercase and use dashes (not underscores or camelCase)
-* Avoid arbitrary shorthand notation
-* Keep classes as short and succinct as possible
-* Use meaningful names; use structural or purposeful names over presentational
-* Prefix classes based on the closest parent component's base class
+* Mantenha as classes em minusculas e use hifens (e não sublinhados ou tudo junto com apenas o começo das palavras capitalizado "camelCase")
+* Evite abriviações como notação
+* Mantenha classes com nomes pequenos e sucintos quando possivel
+* Use nome siginificativos; use nomes estruturais ou que denotem o proposito como apresentação
+* Use prefixos de classes baseado em parentes mais proximos do componente base daquela classe
 
-**Bad example:**
+**Mal exemplo:**
 
 ````css
 .t { ... }
@@ -293,7 +296,7 @@ Great code comments convey context or purpose and should not just reiterate a co
 .header { ... }
 ````
 
-**Good example:**
+**Bom exemplo:**
 
 ````css
 .tweet { ... }
@@ -301,13 +304,14 @@ Great code comments convey context or purpose and should not just reiterate a co
 .tweet-header { ... }
 ````
 
-#### Selectors
+#### Seletores 
 
-* Use classes over generic element tags
-* Keep them short and limit the number of elements in each selector to three
+* Use classes em elementos que representem abstrações genericas
+* Mantenha o mais curto e limite o numero de elementos em cada arvore de seletor
 * Scope classes to the closest parent when necessary (e.g., when not using prefixed classes)
+* Mantenha-se no escopo de classes que tem um parentes mais proximo ( ex.:, onde não usam classes com prefixo )
 
-**Bad example:**
+**Mal examplo:**
 
 ````css
 span { ... }
@@ -315,7 +319,7 @@ span { ... }
 .avatar { ... }
 ````
 
-**Good example:**
+**Bom exemplo:**
 
 ````css
 .avatar { ... }
@@ -323,23 +327,11 @@ span { ... }
 .tweet .avatar { ... }
 ````
 
-### Organization
+### Organização 
 
-* Organize sections of code by component
-* Develop a consistent commenting hierarchy
-* If using multiple CSS files, break them down by component
-
-
-
-----------
-
-
-
-## Copy
-
-### Sentence case
-
-Always write copy, including headings and code comments, in [sentence case](http://en.wikipedia.org/wiki/Letter_case#Usage). In other words, aside from titles and proper nouns, only the first word should be capitalized.
+* Organize seleções do código por componente
+* Desenvolva uma concistente hierarquia comentada
+* Se você estiver utilizando varios arquivos para CSS, quebre eles em componentes
 
 
 
@@ -347,6 +339,18 @@ Always write copy, including headings and code comments, in [sentence case](http
 
 
 
-### Thanks
+## Cópia 
 
-Heavily inspired by [Idiomatic CSS](https://github.com/necolas/idiomatic-css) and the [GitHub Styleguide](http://github.com/styleguide). Made with all the love in the world by [@mdo](http://twitter.com/mdo).
+### Caso de sentença 
+
+Sempre escreva uma cópia, incluindo cabeçãlhos e comentarios do código, em [caso de sentença](http://en.wikipedia.org/wiki/Letter_case#Usage). Em outras palavras, ao lado dos titulos e nomes próprios, sempre capitalize a primeira palavra.
+
+
+
+----------
+
+
+
+### Obrigado 
+
+Fortemente inspirado pelo [CSS Idiomatico](https://github.com/necolas/idiomatic-css) e O [Guia de estilo do Github](http://github.com/styleguide). Feito com todo amor do mundo por [@mdo](http://twitter.com/mdo).
